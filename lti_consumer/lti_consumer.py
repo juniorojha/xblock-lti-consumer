@@ -258,7 +258,7 @@ class LtiConsumerXBlock(StudioEditableXBlockMixin, XBlock):
             "Analytics reports may also use the display name to identify this component."
         ),
         scope=Scope.settings,
-        default=_("LTI Consumer"),
+        default=_("بث مباشر جديد"),
     )
     description = String(
         display_name=_("LTI Application Information"),
@@ -267,7 +267,7 @@ class LtiConsumerXBlock(StudioEditableXBlockMixin, XBlock):
             "If requesting username and/or email, use this text box to inform users "
             "why their username and/or email will be forwarded to a third party application."
         ),
-        default="",
+        default="You can use the 'Join Session' button below to go to the web meeting.",
         scope=Scope.settings
     )
     lti_id = String(
@@ -281,7 +281,7 @@ class LtiConsumerXBlock(StudioEditableXBlockMixin, XBlock):
             docs_anchor_open=DOCS_ANCHOR_TAG_OPEN,
             anchor_close="</a>"
         ),
-        default='',
+        default='bbb-lti',
         scope=Scope.settings
     )
     launch_url = String(
@@ -294,7 +294,7 @@ class LtiConsumerXBlock(StudioEditableXBlockMixin, XBlock):
             docs_anchor_open=DOCS_ANCHOR_TAG_OPEN,
             anchor_close="</a>"
         ),
-        default='',
+        default='https://bbb.edu.afdal.life/lti/tool',
         scope=Scope.settings
     )
     custom_parameters = List(
@@ -317,7 +317,7 @@ class LtiConsumerXBlock(StudioEditableXBlockMixin, XBlock):
             "Select New Window if you want the LTI content to open in a new browser window. "
             "This setting is only used when Hide External Tool is set to False."
         ),
-        default=LaunchTarget.IFRAME.value,
+        default=LaunchTarget.NEW_WINDOW.value,
         scope=Scope.settings,
         values=[
             {"display_name": LaunchTarget.IFRAME.display_name, "value": LaunchTarget.IFRAME.value},
@@ -332,7 +332,7 @@ class LtiConsumerXBlock(StudioEditableXBlockMixin, XBlock):
             "This setting is only used when Hide External Tool is set to False and "
             "LTI Launch Target is set to Modal or New Window."
         ),
-        default="",
+        default="Join Session",
         scope=Scope.settings
     )
     inline_height = Integer(
@@ -352,7 +352,7 @@ class LtiConsumerXBlock(StudioEditableXBlockMixin, XBlock):
             "This setting is only used when Hide External Tool is set to False and "
             "LTI Launch Target is set to Modal."
         ),
-        default=80,
+        default=480,
         scope=Scope.settings
     )
     modal_width = Integer(
@@ -362,7 +362,7 @@ class LtiConsumerXBlock(StudioEditableXBlockMixin, XBlock):
             "This setting is only used when Hide External Tool is set to False and "
             "LTI Launch Target is set to Modal."
         ),
-        default=80,
+        default=640,
         scope=Scope.settings
     )
     has_score = Boolean(
@@ -435,7 +435,7 @@ class LtiConsumerXBlock(StudioEditableXBlockMixin, XBlock):
 
     # Possible editable fields
     editable_field_names = (
-        'display_name', 'description', 'lti_id', 'launch_url', 'custom_parameters',
+        'display_name', 'description', 'custom_parameters',
         'launch_target', 'button_text', 'inline_height', 'modal_height', 'modal_width',
         'has_score', 'weight', 'hide_launch', 'accept_grades_past_due', 'ask_to_send_username',
         'ask_to_send_email', 'enable_processors',

@@ -258,7 +258,7 @@ class LtiConsumerXBlock(StudioEditableXBlockMixin, XBlock):
             "Analytics reports may also use the display name to identify this component."
         ),
         scope=Scope.settings,
-        default=_("بث مباشر جديد"),
+        default=_("Web Conferencing"),
     )
     description = String(
         display_name=_("LTI Application Information"),
